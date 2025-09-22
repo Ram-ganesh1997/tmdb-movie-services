@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/movies")
 @Slf4j
@@ -16,10 +18,16 @@ public class MovieController {
     private MovieService movieService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Movie> getmovies(@PathVariable Long id){
+    public ResponseEntity<Movie> getMovies(@PathVariable Long id){
 
         Movie movie = movieService.readMovie(id);
         log.info("Returning movie with id {}", id);
+        return new ResponseEntity<>(movie, HttpStatus.OK);
+    }
+    @GetMapping
+    public ResponseEntity<List<Movie>> getMoviesList(){
+        List<Movie> movie = movieService.getMoviesList();
+        log.info("Returning movies list ");
         return new ResponseEntity<>(movie, HttpStatus.OK);
     }
 
