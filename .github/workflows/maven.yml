@@ -28,9 +28,9 @@ jobs:
         distribution: 'temurin'
         cache: maven    
     - name: Build & Push docker image
-   env:
+    env:
     DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
     DOCKERHUB_PWD: ${{ secrets.DOCKERHUB_PWD }}
-   run: mvn -B spring-boot:build-image -DskipTests
+    run: mvn -B spring-boot:build-image -DskipTests
 
     
