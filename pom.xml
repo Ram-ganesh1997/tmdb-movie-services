@@ -92,7 +92,7 @@
 						</exclude>
 					</excludes>
                     <image>
-                        <name>docker.io/ramganesh7314/${project.artifactId}:${project.version}</name>
+                        <name>docker.io/ramaganesh16r@gmail.com/${project.artifactId}:${project.version}</name>
                         <publish>true</publish>
                     </image>
                     <docker>
